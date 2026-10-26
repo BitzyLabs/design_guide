@@ -19,6 +19,8 @@ Names and circumstances used below illustrate our process; **nothing in this gui
 
 ---
 
+**One-step option:** [Copy the complete automated research prompt](#start-here-one-prompt-with-the-ai-doing-the-research). It covers direct/adjacent competition, Composio/registrar lookups, ASIC, trade marks, brand voice and pivots, with a founder-controlled purchase gate.
+
 ## Quick navigation
 
 1. [What our naming process actually looks like](#1-what-our-naming-process-actually-looks-like)
@@ -38,6 +40,84 @@ Names and circumstances used below illustrate our process; **nothing in this gui
 15. [Reusable naming templates](#15-reusable-naming-templates)
 16. [Mistakes to avoid](#16-mistakes-to-avoid)
 17. [References and credits](#17-references-and-credits)
+
+---
+
+## Start here: one prompt, with the AI doing the research
+
+**For most founders, this is the only part you need to copy.** A connected assistant should run the discovery, competitor research, domain comparisons and registry pre-screen **itself**, then present the useful evidence and a small number of decisions. The sections below explain the quality standard and what to do when a source is inaccessible.
+
+~~~text
+You are the naming strategist and research analyst for MY product.
+
+Follow this full product_naming.md guide. Treat BitzyLabs/design_guide as
+read-only upstream, not a repo you may edit.
+
+PRODUCT / CURRENT BRIEF: [describe the idea; if an existing project,
+read my current project brief and accepted pivots]
+TARGET AUDIENCE / INITIAL MARKETS: [e.g. Australian founders + global SaaS]
+BRAND FEEL: [e.g. rebellious and smart; warm and no-fuss]
+AVOID / EARLIER REJECTIONS: [if known; otherwise find existing naming board]
+DOMAINS AND BUDGET: [.com/.au/.app/.dev; max first-year and renewal]
+AUTHORIZED PROJECT REPO/NOTION: [my own location, if connected]
+
+Work autonomously on READ-ONLY research and a proposed naming decision pack:
+
+1. Define the actual product promise, customer, emotional territory,
+   market and plausible pivots. Confirm what is already decided.
+2. Research DIRECT competitors, ADJACENT/ALIGNED products and SUBSTITUTES
+   based on the same customer problem and purchasing decision—not only
+   matching keywords. Give real product links and evidence of what
+   they actually offer. Identify how our value proposition differs.
+3. Generate 3–5 distinctive naming territories, then a diverse longlist;
+   eliminate generic, misleading, awkward, phonetic and rejected ideas.
+4. Screen 8–12 stronger names for REAL same/similar brand use, especially
+   software businesses in related markets. Mark confusing collisions
+   separately from ordinary product competition.
+5. Discover available registrar tools, including Composio-accessible
+   integrations and direct GoDaddy / Namecheap / Spaceship / other
+   supported providers. Read each tool's schema. Batch LIVE checks for
+   relevant TLDs. Compare availability, first-year and renewal price,
+   currency, premium pricing, taxes/eligibility and unsupported TLDs.
+   NEVER invent prices; NOT SUPPORTED != NOT AVAILABLE.
+6. Pre-screen 3–6 survivors through the official ASIC business-name
+   register / availability checks and IP Australia TM Checker / Australian
+   Trade Mark Search. Include exact, sound-alike, visual and relevant
+   goods/services/class matches. Check extra jurisdictions if needed.
+   If a protected portal blocks automation, say NOT VERIFIED and give me
+   its official URL plus the exact final query I need to confirm.
+   Never equate a domain or ASIC result with trade mark clearance.
+7. Create mini brand-direction comparisons for the best 3–5 names:
+   core thesis, three tone adjectives, don't-sound-like constraints,
+   taglines, homepage/support copy, logo/wordmark concept, two palette
+   directions and spelling/pronunciation stress tests.
+8. Rank the finalists with an explained weighted scorecard, but treat
+   collision/legal risks as separate blockers. Keep a durable SHORTLIST,
+   WATCH/NEEDS CHECK and REJECTED/DO-NOT-RECYCLE register.
+9. For a product pivot, reassess whether to KEEP / REPOSITION / EXTEND /
+   RENAME the current brand. Do not assume rebranding is required.
+10. Deliver one concise, date-stamped NAMING DECISION PACK:
+    positioning; verified direct/adjacent competitors; names rejected;
+    registrar/prices snapshot; ASIC and trade mark findings;
+    brand-voice options; recommended lead, runner-up and fallback;
+    evidence links; unresolved risks; next owner approvals.
+
+Research first, without making me manually perform the whole workflow.
+Batch inexpensive lookups; deepen only finalists. Do not ask many setup
+questions if reasonable assumptions can be stated and checked.
+
+NEVER: purchase/register/renew domains, file business names or trade marks,
+spend money, change DNS/production/public branding, or alter another
+organisation's repo without my explicit authorisation.
+Do not pretend a website or government register was checked if it wasn't.
+Save the decision pack only into MY authorised repo/Notion, if available.
+~~~
+
+### What the agent should return
+
+**Deliverables in one answer or one small file set:** (a) positioning brief and naming territories; (b) dated real-competitor map with **direct, aligned/adjacent and substitute** categories; (c) longlist funnel with do-not-recycle reasons; (d) multi-registrar domain/renewal comparison; (e) ASIC/trade mark pre-screen and precise outstanding checks; (f) voice, palette and positioning options; (g) founder-ready recommendation and decision memo.
+
+**Gate:** research is authorised; **purchases, filings, DNS and public rebrands are not**. An agent may be unable to use a government portal or an unavailable registrar. In that case it should complete the rest and hand over **only the specific final human check**, not turn the whole research process back into homework.
 
 ---
 
@@ -108,6 +188,22 @@ This was **not** simply a “pick the highest numerical score” exercise. We ex
 Its visual language developed into **tilfrd.** with a deliberate dot, a restrained dark/cream/coral palette and a voice that is **friendly, clever, lightly cheeky and plain-spoken**.
 
 The lesson is that a name **does not have to literally describe every feature** if the brand and messaging quickly explain the value. But coined spellings impose a real cost: pronunciation, spelling after hearing it, and people typing the right domain must be tested, not assumed.
+
+### When the product pivots, redo the *market* research
+
+An earlier brand brief is not automatically authoritative after a scope change. In our work, **Tilfrd moved away from an earlier e-commerce QA/testing direction** into **a subscription collection of modular operational SaaS “bricks”**. That change altered both the product promise and the real direct/adjacent competitor set.
+
+When a founder pivots, the agent should:
+
+1. Record **OLD POSITIONING vs NEW POSITIONING**, customer, price and what is genuinely different.
+2. Reclassify real direct, adjacent and substitute competitors using the new job-to-be-done.
+3. Revisit whether the chosen/proposed name implies a feature no longer central to the product.
+4. Re-run domain, naming collision and registration pre-screens if the target category/market changes.
+5. Evaluate **KEEP**, **REPOSITION**, **EXTEND**, and **RENAME**—in that order of least disruption unless evidence argues otherwise.
+6. If a rebrand wins, draft a domain, search, support, product copy and compatibility migration **plan**, not automatic deployment.
+7. Preserve accepted historic decisions as **SUPERSEDED BY [new decision]** rather than deleting them.
+
+**Brand architecture matters as much as renaming:** Bitzy Labs is the parent; RoleRiff and Tilfrd have independent personalities; GemAura is a platform/internal identity, with Isylon Gems and Ceylevia & Co as distinct storefront identities. Don't force every product/store/module to share one name or let an internal codename leak into customer messaging.
 
 ### Other Bitzy Labs naming patterns
 
@@ -225,6 +321,32 @@ A slightly unusual spelling may be worth it for a compelling product; document t
 
 **This is the most important distinction in the guide: an available domain does not establish that a name is safe to use or register.**
 
+### Map the **real competitive landscape**, not just name collisions
+
+A serious naming investigation starts with the **business idea**, because our name needs to make sense next to products customers might already pay for.
+
+| Bucket | What qualifies | Agent evidence required |
+| --- | --- | --- |
+| **Direct competition** | Same/similar job-to-be-done, customer and purchase decision | Active product, customer, actual functionality and pricing if public |
+| **Aligned / adjacent competition** | Overlapping buyer, workflow or distribution; could add our feature or already bundles part of it | What overlaps, why it may compete and current source |
+| **Substitutes** | Agencies, DIY processes, spreadsheets, a platform bundle, in-house workflows | How customers solve the problem without buying us |
+| **Brand/name collisions** | Exact, similar-looking, similar-sounding or misleadingly close identities | Actual use, jurisdiction, goods/services, confusion risk |
+
+**Being a direct competitor does not mean their name is a conflict.** Likewise, a naming conflict need not be a direct competitor. The agent should deliver **two connected assessments**: market differentiation and brand-confusion risk.
+
+**Agent research procedure:** search keywords related to *customer pain* and *jobs-to-be-done*; inspect live product sites, docs/pricing, app marketplaces and alternative lists; confirm what products *actually* offer, not vague teasers. Then check every serious candidate's exact name, common misspellings, speech-equivalent versions and industry-context queries across intended geographies.
+
+Evidence record:
+
+~~~md
+| Product / company | Direct / Adjacent / Substitute / Collision |
+| Official URL | Actual offer | Shared customer / workflow |
+| Why it matters | Brand-name similarity | Geography |
+| Evidence checked at | Risk | Open question |
+~~~
+
+**Real research can trigger a product pivot:** if a new/adjacent player already owns the job cheaply or a compelling whitespace emerges, revise positioning and re-run naming. Don't hide bad news to preserve a favourite name.
+
 ### Do an initial market collision search
 
 For each serious finalist, search at least:
@@ -246,6 +368,26 @@ Record actual business activity and category, not just an AI label of “clear�
 - Consider a qualified trade mark professional for a consequential investment, disputed search or launch into multiple jurisdictions.
 
 For the United States, the [USPTO's comprehensive clearance guidance](https://www.uspto.gov/trademarks/search/comprehensive-clearance-search-similar-trademarks) emphasises confusingly similar marks and **related goods/services**, not merely exact-word matches.
+
+### Verify *business name availability* separately (ASIC)
+
+Use [ASIC's official Business Names Register](https://www.asic.gov.au/online-services/search-asic-registers/business-names-register) to inspect existing registered holders and [ASIC's registration/availability instructions](https://www.asic.gov.au/for-business-and-companies/business-names/register-a-business-name) for the **Check business name availability** function. ASIC commonly reports:
+
+- **Green:** name available for registration under its name tests.
+- **Amber:** requires ASIC assessment; **do not** label available or cleared.
+- **Red:** unavailable.
+
+For coined or unusual spellings, **amber can mean manual review**. Record the exact query, returned status, date and link/screenshot where possible. Existing company or trading-name use may warrant further investigation even if exact registered business-name results appear empty. [ABN Lookup](https://abr.business.gov.au/) helps identify Australian business entities and relevant historical trading names.
+
+**Business name availability is not ownership of the trade mark.**
+
+### Verify trade marks separately (IP Australia)
+
+Start with [TM Checker](https://www.ipaustralia.gov.au/tm-checker), then inspect [Australian Trade Mark Search](https://search.ipaustralia.gov.au/trademarks) for **exact and similar registered or pending marks**, common misspellings, similar pronunciation, word breaks and relevant **goods/services and Nice classes**. Review jurisdiction and actual commercial context. Later, assess confusingly similar logo directions too.
+
+[IP Australia explains that searches do not guarantee a later registration outcome](https://www.ipaustralia.gov.au/trade-marks/search-existing-trade-marks). For consequential launch investment, unresolved overlap or overseas expansion, obtain appropriately scoped professional advice. If ASIC or IP Australia tools block programmatic access, the agent must return **NOT VERIFIED**, the **official portal URL**, proposed exact search term(s) and the minimum human action remaining.
+
+**Always keep four statuses distinct:** DOMAIN STATUS · ASIC BUSINESS-NAME STATUS · TRADE MARK PRE-SCREEN STATUS · LEGAL CLEARANCE STATUS. None automatically proves another. A connected AI agent must not claim “trademark cleared” without a genuinely appropriate, documented legal conclusion.
 
 ### Collision status language
 
@@ -275,6 +417,30 @@ An available-looking name can become financially inconvenient, confusing, or una
 - **Future protection:** whether acquiring matching domains later is affordable or necessary.
 - **Email practicality:** domain spelling, ambiguity and risk of messages sent to a similar domain.
 - **Portability:** who holds the registrar account, renewal reminders, DNS access and transfer capability.
+
+### Automate live multi-registrar research (including Composio)
+
+The founder shouldn't have to open 20 registrar tabs unless the tools are unavailable.
+
+**Recommended agent order:**
+
+1. Discover the **actual** connected domain lookup tools; check direct registrar actions and, if available, [Composio](https://docs.composio.dev/) for supported provider/app actions. Read input schemas; do not invent tool slugs, permissions or results.
+2. Batch the surviving names/TLDs through supported bulk lookups (for example **GoDaddy**, **Namecheap**, **Spaceship**). Not every provider supports every suffix; preserve **UNSUPPORTED / NOT CHECKED** rather than inferring taken/available.
+3. Record availability with the registrar, **time checked**, supported suffix and its **registration** and **normal renewal** prices, clearly identifying missing quote fields as **UNKNOWN**.
+4. Compare real currencies, taxes, TLD eligibility and premium/resale price indicators. Beware limited first-year promotions and long-term renewals.
+5. Include [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) in cost/operational comparisons when appropriate, but **do not assume Cloudflare offers the same live search API or every TLD**. Separate registrar ownership from Cloudflare DNS hosting.
+6. Recheck the leading choice **just before owner-authorised purchase**. Registrar search does not reserve a name and provider prices change.
+7. Suggest a **primary domain and only justified defensive domains**. Don't purchase all combinations.
+
+Example evidence table:
+
+| Name/TLD | Registrar | Live status | 1st year | Renewal | Premium/eligibility | Checked at | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [candidate.example] | [source] | AVAILABLE / TAKEN / UNKNOWN / UNSUPPORTED | [value or UNKNOWN] | [value or UNKNOWN] | [details] | [timestamp] | [URL/tool] |
+
+**Observed practical lesson:** registrar tools that did not support an Australian extension could not establish whether it was available. Absence of a result was **not** permission to invent it. First-year deals were considered alongside real renewal exposure.
+
+**Permission boundary:** Search and price comparison can be automated; purchase, renewal, transfer, billing, nameserver and DNS changes require explicit authorisation for the exact name and account.
 
 ### Keep exact status in the record
 
@@ -470,6 +636,31 @@ Do not call a name trademark-safe or imply a domain has been purchased.
 Output a shortlist and a reusable Notion/GitHub naming board update.
 ~~~
 
+### Live registrar + official registry research — add this to any naming prompt
+
+~~~text
+For each current finalist, run read-only LIVE registrar searches using direct
+supported GoDaddy, Namecheap and Spaceship tools, and/or Composio-discovered
+provider actions where connected. Inspect schemas before executing.
+Return a dated matrix with source, TLD support, availability, registration
+and renewal price, currency, premium pricing, local eligibility and unknowns.
+
+Also search the ACTUAL DIRECT and ALIGNED/ADJACENT competitors, not merely
+the proposed name's web hits. Provide a real official product link and
+evidence of its actual customer, features and market overlap.
+
+Check ASIC business-name availability and registered-name search separately
+from IP Australia TM Checker and Australian Trade Mark Search. Search
+exact/phonetic/visual neighbours and relevant related goods/services.
+Report precisely which checks actually ran and which are BLOCKED/UNKNOWN.
+If a portal cannot be automated, give the official URL and exact term to
+check; do not pretend legal clearance.
+
+Use real findings to challenge positioning and detect necessary pivots.
+Do not change names, buy domains, file business names/trade marks, incur
+costs or edit any repo other than MY explicitly authorised project repo.
+~~~ 
+
 ### Prompt C — Brand pack for true finalists
 
 ~~~text
@@ -619,6 +810,17 @@ This method is **Bitzy Labs' own founder-led synthesis** informed by our actual 
 - [USPTO — Comprehensive clearance searches](https://www.uspto.gov/trademarks/search/comprehensive-clearance-search-similar-trademarks) — related markets and confusingly similar marks.
 - [Bitzy Labs — Human-Friendly Design](human_friendly_design.md) — how to test a name inside a usable visual/product experience.
 - [Bitzy Labs — Project Management](project_mgmt.md) — how to preserve decisions, evidence and rebrand release gates.
+
+### Additional verified Australian government and connected-tool references
+
+- [IP Australia — TM Checker](https://www.ipaustralia.gov.au/tm-checker) — an early pre-screen, **not a guarantee**.
+- [IP Australia — How to search existing trade marks](https://www.ipaustralia.gov.au/trade-marks/search-existing-trade-marks) — search strategies and limitations.
+- [ASIC — Registered business names](https://www.asic.gov.au/online-services/search-asic-registers/business-names-register) — holders and near-name evidence.
+- [ASIC — Check availability](https://www.asic.gov.au/for-business-and-companies/business-names/register-a-business-name) — green/amber/red workflow.
+- [ABN Lookup](https://abr.business.gov.au/) — registration and trading-name context.
+- [business.gov.au — Choose a business name](https://business.gov.au/planning/new-businesses/choose-a-business-name) — distinguish domain/business name/mark rights.
+- [GoDaddy](https://www.godaddy.com/), [Namecheap](https://www.namecheap.com/), [Spaceship](https://www.spaceship.com/), [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) — registrar sources to compare under actual supported tools.
+- [Composio](https://docs.composio.dev/) — discover connected external tool capabilities, within authorised access.
 
 ### Limits of this guide
 
