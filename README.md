@@ -17,20 +17,20 @@ AI can generate code and screens quickly. Getting something **intuitive, reliabl
 
 ---
 
-## 🔒 Important: fork or copy first — never edit the Bitzy Labs source repository
+## Fork or copy before connecting an AI agent
 
 **[BitzyLabs/design_guide](https://github.com/BitzyLabs/design_guide) is the public *upstream reference*, not your application's working repository.** It is there for you to read and reuse. **Do not instruct an AI agent to create branches, change files, push commits, change settings, or open automatic pull requests against the Bitzy Labs repository.**
 
 **Recommended setup:**
 
-1. **[Fork this repository into your own GitHub account or organisation](https://github.com/BitzyLabs/design_guide/fork)** if you want your own complete, editable copy. Open the **fork**, not the Bitzy Labs upstream, in Codex, Claude Code or your other write-capable agent. Confirm its full \`owner/repo\` name before starting any work.
-2. **If you already have an application repository**, copy the relevant Markdown files from your fork (or copy individual upstream files read-only) into **your application's repository**, e.g. \`docs/human_friendly_design.md\`, \`docs/project_mgmt.md\`, \`AGENTS.md\` or \`CLAUDE.md\`. You **do not need to fork merely to read or copy** a guide.
-3. **Connect your AI agent to *your own* repository and tools.** Tell it which \`owner/repo\`, branch and environment it may edit. Make upstream **read-only**. Check \`git remote -v\` when working locally: the writable \`origin\` should be your own repo/fork, not \`BitzyLabs/design_guide\`.
+1. **[Fork this repository into your own GitHub account or organisation](https://github.com/BitzyLabs/design_guide/fork)** if you want your own complete, editable copy. Open the **fork**, not the Bitzy Labs upstream, in Codex, Claude Code or your other write-capable agent. Confirm its full `owner/repo` name before starting any work.
+2. **If you already have an application repository**, copy the relevant Markdown files from your fork (or copy individual upstream files read-only) into **your application's repository**, e.g. `docs/human_friendly_design.md`, `docs/project_mgmt.md`, `AGENTS.md` or `CLAUDE.md`. You **do not need to fork merely to read or copy** a guide.
+3. **Connect your AI agent to *your own* repository and tools.** Tell it which `owner/repo`, branch and environment it may edit. Make upstream **read-only**. Check `git remote -v` when working locally: the writable `origin` should be your own repo/fork, not `BitzyLabs/design_guide`.
 4. **Adapt the examples to your actual project.** Replace placeholders, configure real test commands, set explicit tool budgets and approval rules, then review the proposed changes before any push or deployment.
 5. **Want to contribute an improvement upstream?** Work in your fork and submit an **intentional, separately reviewed pull request**. That is a contribution process—not permission for an agent to autonomously modify the original repository.
 
 > **Copy this instruction into your chat/agent prompt:**  
-> “Treat \`BitzyLabs/design_guide\` as a **read-only upstream reference**. First confirm my writable project repository or fork. If I have not provided one, ask me to fork the guide or copy its Markdown files into my own repository. Apply changes **only to my repository**, never to \`BitzyLabs/design_guide\`. Do not push, create a PR against upstream, or alter any other account/project without my explicit approval.”
+> “Treat `BitzyLabs/design_guide` as a **read-only upstream reference**. First confirm my writable project repository or fork. If I have not provided one, ask me to fork the guide or copy its Markdown files into my own repository. Apply changes **only to my repository**, never to `BitzyLabs/design_guide`. Do not push, create a PR against upstream, or alter any other account/project without my explicit approval.”
 
 **There are two different jobs:** *customising this guide* → work in your **fork**; *building your own product with the guide* → work in **your application repo** using a copied guide or an authorised read-only reference.
 
@@ -91,7 +91,7 @@ Both guides are **framework-agnostic** and require no special installation or pa
 
 ### 1. Give the guides to your AI coding agent
 
-**First: [fork or copy the guides into a repo you own](#-important-fork-or-copy-first--never-edit-the-bitzy-labs-source-repository), then explicitly name your writable repository. The upstream Bitzy Labs repo stays read-only.**
+**First: [fork or copy the guides into a repo you own](#fork-or-copy-before-connecting-an-ai-agent), then explicitly name your writable repository. The upstream Bitzy Labs repo stays read-only.**
 
 For **UI/UX work**, send the agent this instruction:
 
