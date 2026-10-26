@@ -241,6 +241,6 @@ These are practical guides—not professional qualifications or replacements for
 
 ---
 
-**Made with care in Melbourne by [Bitzy Labs](https://github.com/BitzyLabs).**
+**Made with ᥫ᭡. in Melbourne by [Bitzy Labs](https://github.com/BitzyLabs).**
 
 If this helps you build something less frustrating, use it, improve it and share it. 🚀
