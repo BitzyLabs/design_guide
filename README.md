@@ -17,6 +17,27 @@ AI can generate code and screens quickly. Getting something **intuitive, reliabl
 
 ---
 
+## 🛣️ Two ways to use the development guide
+
+Not every founder uses AI in the same way. **Choose the workflow that matches how you build**—both use the same project-management principles.
+
+### 💬 Track A — Chat-first builders
+
+For people developing through ChatGPT or similar ongoing conversations. Keep your project state in GitHub/Notion (or a persistent Markdown checkpoint), break work into chunks, keep milestone updates and restart long chats with verified handovers instead of trying to remember everything.
+
+- **[Read Track A](project_mgmt.md#track-a--if-you-build-your-project-through-chats)**
+- **[Copy the Chat Continuation .md template](templates/CHAT_CONTINUATION.md)** into your project or Notion workspace
+
+### 🤖 Track B — Full coding agents (Codex / Claude Code)
+
+For people using agents that read/edit repositories, execute tests and connect to services. Keep concise repo-specific instructions, point agents to the detailed guide, enforce scope and permissions, check CI/provider budgets and seal each chunk with real evidence.
+
+- **[Read Track B](project_mgmt.md#track-b--if-you-use-full-coding-agents-codex--claude-code)**
+- **[Codex: AGENTS.md starter](templates/AGENTS.md)** — copy into your repo root as \`AGENTS.md\`
+- **[Claude Code: CLAUDE.md starter](templates/CLAUDE.md)** — copy into your repo root as \`CLAUDE.md\`
+
+These templates **do not install plugins, grant access or bypass approvals**. You still need to configure your tools and review changes. Codex and Claude Code automatically recognise their respective project instruction conventions where supported; see the [Codex reference](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) and [Claude Code reference](https://support.claude.com/en/articles/14553413-claude-code-cheatsheet).
+
 ## ✨ What you'll get
 
 ### Human-Friendly Design
@@ -110,7 +131,10 @@ For interface changes, use the [design acceptance checklist](human_friendly_desi
 | File | Purpose |
 | --- | --- |
 | **[human_friendly_design.md](human_friendly_design.md)** | Human-centred UI/UX playbook, agent prompt, examples and acceptance checklist |
-| **[project_mgmt.md](project_mgmt.md)** | AI development workflow, GitHub/Notion continuity, agents, tools, budgets, incident triage and handover templates |
+| **[project_mgmt.md](project_mgmt.md)** | Two workflows (chat-first and coding agents), GitHub/Notion continuity, budgets, incident triage, reviews and handovers |
+| **[templates/CHAT_CONTINUATION.md](templates/CHAT_CONTINUATION.md)** | Paste into a chat or keep as your ongoing project handover file |
+| **[templates/AGENTS.md](templates/AGENTS.md)** | Copy-ready root project instructions for Codex |
+| **[templates/CLAUDE.md](templates/CLAUDE.md)** | Copy-ready root project instructions for Claude Code |
 | **[README.md](README.md)** | Overview, quick-start, provenance, contribution guidance |
 | **[LICENSE](LICENSE)** | MIT licence for original Bitzy Labs contributions |
 
