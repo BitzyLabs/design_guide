@@ -12,7 +12,7 @@ AI can generate code and screens quickly. Getting something **intuitive, reliabl
 
 - **[🎨 Human-Friendly Design → human_friendly_design.md](human_friendly_design.md)** — UI/UX, accessible interactions, onboarding, navigation, error states, visual QA and a copy-paste design prompt.
 - **[🛠️ AI Development & Project Management → project_mgmt.md](project_mgmt.md)** — GitHub/Notion continuity, long-chat handovers, bounded chunks, agent roles, Composio, CI/provider budgets, troubleshooting, platform evaluation and agent prompts.
-- **[✨ Product Naming → product_naming.md](product_naming.md)** — naming briefs, RoleRiff/Tilfrd examples, shortlists, real market and domain checks, visual identity experiments, decision records and reusable prompts.
+- **[✨ Product Naming → product_naming.md](product_naming.md)** — [one-shot AI research prompt](product_naming.md#start-here-one-prompt-with-the-ai-doing-the-research), real direct/adjacent competitor mapping, connected Composio/registrar lookups, ASIC and IP Australia checks, naming pivots, brand voice and decision records.
 
 **A candid note:** I'm not a professional developer, project manager or UI/UX designer. These are practices I've developed as a founder through experiments, mistakes, AI collaboration and fixing real problems—not a substitute for qualified engineering or security review.
 
@@ -79,9 +79,11 @@ These templates **do not install plugins, grant access or bypass approvals**. Yo
 
 - **A proper brief:** audience, product value, desired personality, market, budget and exclusions.
 - **Distinct naming territories:** fewer generic AI names and better reasons behind each candidate.
-- **Human and market screening:** spoken/spelling tests, negative meanings, neighbouring brands and trade mark checks.
-- **Domain realism:** current availability, renewal price, TLD suitability and a canonical domain decision.
+- **Real competitive intelligence:** map direct, aligned/adjacent and substitute products, plus confusing existing names, with actual source links and evidence.
+- **Human and legal pre-screening:** spoken/spelling tests, negative meanings, ASIC business-name availability and separate IP Australia trade mark checks.
+- **AI-powered registrar research:** use supported direct integrations and Composio to batch real availability and initial/renewal checks; mark unsupported TLDs or inaccessible sites as unknown.
 - **Brand-pack stress testing:** tagline, voice, wordmark, palette, light/dark app icons, landing pages and pricing.
+- **Pivots and brand fit:** recheck product scope, competitors and naming territory when a product changes direction.
 - **Durable decisions:** shortlist, rejected/do-not-recycle list, evidence and explicit purchase/registration approval.
 
 ### Project Management & Development
@@ -103,6 +105,8 @@ Both guides are **framework-agnostic** and require no special installation or pa
 
 **First: [fork or copy the guides into a repo you own](#fork-or-copy-before-connecting-an-ai-agent), then explicitly name your writable repository. The upstream Bitzy Labs repo stays read-only.**
 
+For **product naming and brand research**, use the [full one-shot prompt in product_naming.md](product_naming.md#start-here-one-prompt-with-the-ai-doing-the-research). It asks connected agents to handle competitor, registrar and registry research **without** putting that manual burden back on the founder. It must not claim a name legally cleared or purchase anything without approval.
+
 For **UI/UX work**, send the agent this instruction:
 
 > Treat **BitzyLabs/design_guide as read-only**. Confirm that your writable target is **[MY_ACCOUNT/MY_APP_REPO]**, not the guide's original repository. Read my local/forked `human_friendly_design.md` (or the [upstream reference](https://github.com/BitzyLabs/design_guide/blob/main/human_friendly_design.md) read-only), inspect my app's design system and current UI, and apply the relevant principles to **[screen or user journey]**. Modify only my authorised app repo, preserve working behaviour and backend invariants, test desktop/mobile and accessibility, and report verified results. **No pushes or pull requests to Bitzy Labs upstream.**
@@ -122,6 +126,10 @@ Example AGENTS.md snippet:
 ~~~md
 ## Product design and UX
 For UI changes, read ./human_friendly_design.md before implementation.
+
+## Product naming and brand research
+For product naming, read ./product_naming.md and run its research workflow.
+Treat upstream as read-only. Do not purchase domains or claim legal clearance.
 
 ## AI development and continuity
 For implementation and project changes, read ./project_mgmt.md.
@@ -155,10 +163,10 @@ For interface changes, use the [design acceptance checklist](human_friendly_desi
 1. Define the customer, emotional promise and what the brand must not feel like.
 2. Explore distinct naming directions before producing a manageable longlist.
 3. Test pronunciation, spelling, memorability, potential double meanings and scope for growth.
-4. Research similar businesses and trade marks. An available domain is not clearance.
-5. Check current registration and renewal pricing, TLD eligibility and domain ownership.
+4. Investigate actual **direct and aligned/adjacent competitors** as well as confusing name collisions; use official business-name/trade mark registers for separate checks.
+5. Query available registrars through authorised tools/Composio; compare live first-year and renewal pricing, TLD support, eligibility and ASIC/IP Australia pre-screen results. Missing evidence is UNKNOWN.
 6. Mock up serious finalists as real brands, not just logo concepts.
-7. Preserve current finalist/rejected status and owner-approved decisions.
+7. If the product pivots, revisit positioning and market overlap; preserve finalists/rejections and require founder approval before registration, payment or rebranding.
 
 ## 🔁 The development approach in one minute
 
@@ -177,7 +185,7 @@ For interface changes, use the [design acceptance checklist](human_friendly_desi
 | --- | --- |
 | **[human_friendly_design.md](human_friendly_design.md)** | Human-centred UI/UX playbook, agent prompt, examples and acceptance checklist |
 | **[project_mgmt.md](project_mgmt.md)** | Two workflows (chat-first and coding agents), GitHub/Notion continuity, budgets, incident triage, reviews and handovers |
-| **[product_naming.md](product_naming.md)** | Naming process, real cases, word and legal-risk checks, domain economics, brand packs and chat/agent prompts |
+| **[product_naming.md](product_naming.md)** | Automated naming research prompt, real direct/adjacent competition, Composio registrar checks, ASIC/IP Australia pre-screening, brand voice, pivots and decisions |
 | **[templates/CHAT_CONTINUATION.md](templates/CHAT_CONTINUATION.md)** | Paste into a chat or keep as your ongoing project handover file |
 | **[templates/AGENTS.md](templates/AGENTS.md)** | Copy-ready root project instructions for Codex |
 | **[templates/CLAUDE.md](templates/CLAUDE.md)** | Copy-ready root project instructions for Claude Code |
