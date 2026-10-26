@@ -1,17 +1,18 @@
 # Bitzy Labs — Design & Development Playbooks
 
-### Human-friendly UX and continuity-first AI development for founders
+### Human-friendly UX, continuity-first AI development and product naming for founders
 
 **Think complex. Present simple. Build in small, verifiable steps.**
 
 A free, reusable collection of practical design and AI-assisted development lessons from **[Bitzy Labs](https://github.com/BitzyLabs)**, developed while building SaaS products, customer portals, admin tools and connected infrastructure.
 
-AI can generate code and screens quickly. Getting something **intuitive, reliable, recoverable and affordable to operate** takes clearer instructions, continuous documentation, real testing and practical oversight. This repository turns our hard-won lessons into two standalone guides that founders can give to coding agents or use for their own reviews.
+AI can generate code and screens quickly. Getting something **intuitive, reliable, recoverable and affordable to operate** takes clearer instructions, continuous documentation, real testing and practical oversight. This repository turns our hard-won lessons into three standalone guides that founders can give to coding agents or use for their own reviews.
 
 **Choose your guide:**
 
 - **[🎨 Human-Friendly Design → human_friendly_design.md](human_friendly_design.md)** — UI/UX, accessible interactions, onboarding, navigation, error states, visual QA and a copy-paste design prompt.
 - **[🛠️ AI Development & Project Management → project_mgmt.md](project_mgmt.md)** — GitHub/Notion continuity, long-chat handovers, bounded chunks, agent roles, Composio, CI/provider budgets, troubleshooting, platform evaluation and agent prompts.
+- **[✨ Product Naming → product_naming.md](product_naming.md)** — naming briefs, RoleRiff/Tilfrd examples, shortlists, real market and domain checks, visual identity experiments, decision records and reusable prompts.
 
 **A candid note:** I'm not a professional developer, project manager or UI/UX designer. These are practices I've developed as a founder through experiments, mistakes, AI collaboration and fixing real problems—not a substitute for qualified engineering or security review.
 
@@ -24,7 +25,7 @@ AI can generate code and screens quickly. Getting something **intuitive, reliabl
 **Recommended setup:**
 
 1. **[Fork this repository into your own GitHub account or organisation](https://github.com/BitzyLabs/design_guide/fork)** if you want your own complete, editable copy. Open the **fork**, not the Bitzy Labs upstream, in Codex, Claude Code or your other write-capable agent. Confirm its full `owner/repo` name before starting any work.
-2. **If you already have an application repository**, copy the relevant Markdown files from your fork (or copy individual upstream files read-only) into **your application's repository**, e.g. `docs/human_friendly_design.md`, `docs/project_mgmt.md`, `AGENTS.md` or `CLAUDE.md`. You **do not need to fork merely to read or copy** a guide.
+2. **If you already have an application repository**, copy the relevant Markdown files from your fork (or copy individual upstream files read-only) into **your application's repository**, e.g. `docs/human_friendly_design.md`, `docs/project_mgmt.md`, `docs/product_naming.md`, `AGENTS.md` or `CLAUDE.md`. You **do not need to fork merely to read or copy** a guide.
 3. **Connect your AI agent to *your own* repository and tools.** Tell it which `owner/repo`, branch and environment it may edit. Make upstream **read-only**. Check `git remote -v` when working locally: the writable `origin` should be your own repo/fork, not `BitzyLabs/design_guide`.
 4. **Adapt the examples to your actual project.** Replace placeholders, configure real test commands, set explicit tool budgets and approval rules, then review the proposed changes before any push or deployment.
 5. **Want to contribute an improvement upstream?** Work in your fork and submit an **intentional, separately reviewed pull request**. That is a contribution process—not permission for an agent to autonomously modify the original repository.
@@ -74,6 +75,15 @@ These templates **do not install plugins, grant access or bypass approvals**. Yo
 - **A copy-paste agent prompt:** a reusable starting point for coding agents, alongside concrete before/after examples.
 - **References and credits:** direct links to the original external projects that helped shape the approach.
 
+### Product Naming
+
+- **A proper brief:** audience, product value, desired personality, market, budget and exclusions.
+- **Distinct naming territories:** fewer generic AI names and better reasons behind each candidate.
+- **Human and market screening:** spoken/spelling tests, negative meanings, neighbouring brands and trade mark checks.
+- **Domain realism:** current availability, renewal price, TLD suitability and a canonical domain decision.
+- **Brand-pack stress testing:** tagline, voice, wordmark, palette, light/dark app icons, landing pages and pricing.
+- **Durable decisions:** shortlist, rejected/do-not-recycle list, evidence and explicit purchase/registration approval.
+
 ### Project Management & Development
 
 - **Durable project memory:** GitHub code/docs + Notion Project Control, decision logs and one Current Handoff.
@@ -105,7 +115,7 @@ The agent needs access to the URLs or a pasted/local copy. Sharing links does no
 
 ### 2. Add the Markdown file to your own project
 
-First [fork the guide into your own account](https://github.com/BitzyLabs/design_guide/fork) if you want to maintain a complete copy; alternatively copy [human_friendly_design.md](human_friendly_design.md), [project_mgmt.md](project_mgmt.md), or both **into a repository you own**. Reference your **local copies**, not an editable checkout of the Bitzy Labs upstream, from your project's own instructions (for example, AGENTS.md). Keep brand tokens, architecture and project-specific permissions authoritative.
+First [fork the guide into your own account](https://github.com/BitzyLabs/design_guide/fork) if you want to maintain a complete copy; alternatively copy [human_friendly_design.md](human_friendly_design.md), [project_mgmt.md](project_mgmt.md), [product_naming.md](product_naming.md), or whichever guides you need **into a repository you own**. Reference your **local copies**, not an editable checkout of the Bitzy Labs upstream, from your project's own instructions (for example, AGENTS.md). Keep brand tokens, architecture and project-specific permissions authoritative.
 
 Example AGENTS.md snippet:
 
@@ -140,6 +150,16 @@ For interface changes, use the [design acceptance checklist](human_friendly_desi
 7. **Audit on real screens.** Review desktop and mobile, keyboard use, long content, errors, recovery and typical browser zoom.
 8. **Preserve engineering correctness.** Never trade data integrity, permissions, auditability or reliability for aesthetics.
 
+## ✨ The product naming approach in one minute
+
+1. Define the customer, emotional promise and what the brand must not feel like.
+2. Explore distinct naming directions before producing a manageable longlist.
+3. Test pronunciation, spelling, memorability, potential double meanings and scope for growth.
+4. Research similar businesses and trade marks. An available domain is not clearance.
+5. Check current registration and renewal pricing, TLD eligibility and domain ownership.
+6. Mock up serious finalists as real brands, not just logo concepts.
+7. Preserve current finalist/rejected status and owner-approved decisions.
+
 ## 🔁 The development approach in one minute
 
 1. **Keep memory durable.** GitHub holds executable truth; Notion tracks current scope, decisions and handoffs.
@@ -157,6 +177,7 @@ For interface changes, use the [design acceptance checklist](human_friendly_desi
 | --- | --- |
 | **[human_friendly_design.md](human_friendly_design.md)** | Human-centred UI/UX playbook, agent prompt, examples and acceptance checklist |
 | **[project_mgmt.md](project_mgmt.md)** | Two workflows (chat-first and coding agents), GitHub/Notion continuity, budgets, incident triage, reviews and handovers |
+| **[product_naming.md](product_naming.md)** | Naming process, real cases, word and legal-risk checks, domain economics, brand packs and chat/agent prompts |
 | **[templates/CHAT_CONTINUATION.md](templates/CHAT_CONTINUATION.md)** | Paste into a chat or keep as your ongoing project handover file |
 | **[templates/AGENTS.md](templates/AGENTS.md)** | Copy-ready root project instructions for Codex |
 | **[templates/CLAUDE.md](templates/CLAUDE.md)** | Copy-ready root project instructions for Claude Code |
@@ -189,7 +210,7 @@ At Bitzy Labs, we've iterated through real usage, tough feedback, screenshots, C
 
 Instead of keeping those lessons buried in project-specific conversations, we're sharing an adaptable public reference for other founders and builders.
 
-No private source code, staging hosts, credentials or proprietary business logic is included in this repository.
+No private source code, staging hosts, credentials, unreleased shortlists or proprietary business logic is included in this repository.
 
 ## 🤝 Contributing
 
