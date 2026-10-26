@@ -15,11 +15,116 @@ This guide comes from **practical experience building Bitzy Labs projects with A
 
 It is a reusable **operating playbook**, not a promise that any AI model, tool, vendor, architecture, or process is infallible. Adapt its controls to your team, product, legal obligations, budget, and skill level. Important security, accessibility, infrastructure, and production decisions may require qualified professional review.
 
-**Fast start:** See [the copy-paste agent instructions](#17-copy-paste-instructions-for-agents) and the [20-minute setup](#19-a-20-minute-setup-for-a-new-project).
+**Fast start:** Pick **Track A (chat-first)** or **Track B (coding agents)** below. Then use the [copy-paste agent instructions](#17-copy-paste-instructions-for-agents) and the [20-minute setup](#19-a-20-minute-setup-for-a-new-project).
+
+---
+
+## Choose your workflow: two practical tracks
+
+**This repository supports two kinds of founders.** Pick one track (or use both). Both share the detailed rules later in this file; they differ in **how you provide context and how work is executed**.
+
+| | **Track A — Chat-first development** | **Track B — Coding agents (Codex / Claude Code)** |
+| --- | --- | --- |
+| Main workspace | ChatGPT or another conversational assistant | IDE, terminal or hosted coding agent working with a repository |
+| Durable memory | GitHub docs, Notion or a maintained project checkpoint file | Repo docs + \`AGENTS.md\` / \`CLAUDE.md\` and an actual Git working tree |
+| Continuation | Versioned chats, structured handover and re-verification | New agent sessions that reread project rules, latest handoff, code and CI |
+| Main risk | Long chats drift, context disappears, unverified progress claims | Too-broad code/tool access, changes without review, expensive repeated runs |
+| Copy-ready starting point | [CHAT_CONTINUATION.md](templates/CHAT_CONTINUATION.md) | [AGENTS.md](templates/AGENTS.md) for Codex; [CLAUDE.md](templates/CLAUDE.md) for Claude Code |
+| Full practices | [Chat management](#4-avoid-long-chat-context-decay), [handoffs](#16-reusable-templates) | [Agent roles](#6-coordinate-agents-without-losing-control), [Git/release gates](#11-manage-branches-reviews-and-release-gates) |
+
+### Track A — If you build your project through chats
+
+**You do not need a terminal agent or an automatically connected GitHub account to use this.** This path is for founders who direct work in successive ChatGPT-style conversations, sometimes with connected apps, sometimes by uploading files and copying commands.
+
+**Set it up once:**
+
+1. Create a project README and a simple \`docs/CHAT_CONTINUATION.md\` using the [ready-to-copy template](templates/CHAT_CONTINUATION.md). You can maintain the equivalent in Notion if you don't use GitHub yet.
+2. Keep four pieces of state current: **goal**, **what is verified**, **what remains blocked**, and **one exact next task**. When GitHub is available, also record branch and commit.
+3. If connectors are available, let your assistant **read** GitHub, Notion and provider state; if not, provide screenshots/logs/exports and insist it labels unverified claims.
+4. Break development into small chunks. Ask for a clear scope and tests, then a concise update after each meaningful milestone.
+5. After each chunk, update the durable handoff in GitHub/Notion rather than relying on chat memory.
+6. **Before the chat becomes unwieldy**, ask for a comprehensive starter prompt grounded in the latest checkpoint. Start \`Project vNext\` and have the new chat inspect the current evidence before continuing.
+7. Never let a new chat confidently invent project state. Unknowns remain **UNKNOWN** until inspected.
+
+**Example chat instruction:**
+
+~~~text
+Use the Chat-first track in project_mgmt.md. Before continuing this project,
+review docs/CHAT_CONTINUATION.md and the latest real GitHub/Notion/provider
+evidence available to you. State the last verified change and one next chunk.
+Work within that scope and provide concise milestone updates. If this chat
+becomes large or inconsistent, update the durable checkpoint and prepare
+a complete starter prompt for a new chat; do not use chat memory as the only
+source of truth. Keep tool calls and paid services budget-conscious.
+~~~
+
+**Use these reusable files in your own project:**
+
+~~~text
+README.md
+docs/
+  CHAT_CONTINUATION.md     <- copy from templates/CHAT_CONTINUATION.md
+  CURRENT_HANDOFF.md       <- optional if CHAT_CONTINUATION is current
+  DECISIONS.md             <- accepted choices / rejected alternatives
+~~~
+
+If Notion is your preferred control plane, store the continuation as a **Current Handoff** page and link it from your repo. You still need a way to tell historical checkpoints from current state. Keep the conversation as the workbench, **not the filing cabinet**.
+
+### Track B — If you use full coding agents (Codex / Claude Code)
+
+This path is for tools that **inspect and edit your actual repository, run tests and interact with external services**. Their biggest risk is not chat length alone: it is an agent confidently doing the wrong thing at scale.
+
+**Set it up once:**
+
+1. Place the applicable concise instruction file in your project root:
+   - **Codex:** copy [\`templates/AGENTS.md\`](templates/AGENTS.md) to **\`AGENTS.md\`**.
+   - **Claude Code:** copy [\`templates/CLAUDE.md\`](templates/CLAUDE.md) to **\`CLAUDE.md\`**.
+   - If you use both, keep the two files consistent. Neither is a substitute for actual tool permissions.
+2. Copy **\`project_mgmt.md\`** into your repository as the detailed standard, or provide the public URL when your agent has permitted internet access. Add \`human_friendly_design.md\` for UI/UX work.
+3. Maintain \`docs/CURRENT_HANDOFF.md\` with exact branch/commit, active chunk, test evidence, environment status and next action.
+4. Configure available tooling (GitHub, Notion, Composio/MCP, CI/provider tooling) with least privilege; start read-only and gate sensitive writes.
+5. Require the agent to **inspect first**, implement one bounded chunk, test cheaply, review real diffs, and get approval for infrastructure/billing/production changes.
+6. Before running CI again after an unexplained failure, inspect logs, whether runners started, provider quotas and budgets. For unclear provider writes, read back before retrying.
+7. Review and seal each chunk with exact revision evidence, tests, changed docs and handoff.
+
+**Recommended repo structure:**
+
+~~~text
+AGENTS.md                  <- Codex; copy from this repo's templates/AGENTS.md
+CLAUDE.md                  <- Claude Code; copy from templates/CLAUDE.md
+project_mgmt.md            <- detailed reference (copy from this repo)
+human_friendly_design.md  <- optional UI/UX companion
+README.md
+docs/
+  CURRENT_HANDOFF.md       <- always-current execution checkpoint
+  DECISIONS.md             <- ADR index / accepted decisions
+  RUNBOOK.md               <- verification and safe rollback
+  ROADMAP.md               <- bounded work and release gates
+~~~
+
+**Keep the always-read agent files short and actionable.** \`AGENTS.md\` / \`CLAUDE.md\` should point to the longer playbook rather than paste all its chapters into every session. That protects context budgets and prevents duplicated, conflicting rules.
+
+**What these filenames actually do:** Codex supports repo-level \`AGENTS.md\`; Claude Code uses \`CLAUDE.md\` for project context. Their behaviour depends on the specific version/configuration. Follow the latest [Codex documentation](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) and [Claude Code guidance](https://support.claude.com/en/articles/14553413-claude-code-cheatsheet). A Markdown file is **guidance**, not a sandbox or permission enforcement system.
+
+**Start-of-task instruction for your coding agent:**
+
+~~~text
+Follow the Coding Agent track of project_mgmt.md and this repo's
+AGENTS.md or CLAUDE.md. First inspect the current working tree,
+remote branch/HEAD, docs/CURRENT_HANDOFF.md, relevant code/CI and
+provider state when permitted. Reconcile mismatches before editing.
+Implement one approved bounded chunk, run cheap relevant tests before
+expensive CI, use least-privilege integrations, inspect your diff, and
+update the durable handoff with exact evidence and the next action.
+Get owner approval before production, DNS, credentials, paid resources,
+spending-limit changes, destructive operations or sensitive migrations.
+~~~
 
 ---
 
 ## Contents
+
+**Start here:** [Track A — chat-first development](#track-a--if-you-build-your-project-through-chats) · [Track B — coding agents](#track-b--if-you-use-full-coding-agents-codex--claude-code)
 
 1. [Operating principles](#1-operating-principles)
 2. [Give each system a job](#2-give-each-system-a-job)
