@@ -17,11 +17,32 @@ AI can generate code and screens quickly. Getting something **intuitive, reliabl
 
 ---
 
+## 🔒 Important: fork or copy first — never edit the Bitzy Labs source repository
+
+**[BitzyLabs/design_guide](https://github.com/BitzyLabs/design_guide) is the public *upstream reference*, not your application's working repository.** It is there for you to read and reuse. **Do not instruct an AI agent to create branches, change files, push commits, change settings, or open automatic pull requests against the Bitzy Labs repository.**
+
+**Recommended setup:**
+
+1. **[Fork this repository into your own GitHub account or organisation](https://github.com/BitzyLabs/design_guide/fork)** if you want your own complete, editable copy. Open the **fork**, not the Bitzy Labs upstream, in Codex, Claude Code or your other write-capable agent. Confirm its full \`owner/repo\` name before starting any work.
+2. **If you already have an application repository**, copy the relevant Markdown files from your fork (or copy individual upstream files read-only) into **your application's repository**, e.g. \`docs/human_friendly_design.md\`, \`docs/project_mgmt.md\`, \`AGENTS.md\` or \`CLAUDE.md\`. You **do not need to fork merely to read or copy** a guide.
+3. **Connect your AI agent to *your own* repository and tools.** Tell it which \`owner/repo\`, branch and environment it may edit. Make upstream **read-only**. Check \`git remote -v\` when working locally: the writable \`origin\` should be your own repo/fork, not \`BitzyLabs/design_guide\`.
+4. **Adapt the examples to your actual project.** Replace placeholders, configure real test commands, set explicit tool budgets and approval rules, then review the proposed changes before any push or deployment.
+5. **Want to contribute an improvement upstream?** Work in your fork and submit an **intentional, separately reviewed pull request**. That is a contribution process—not permission for an agent to autonomously modify the original repository.
+
+> **Copy this instruction into your chat/agent prompt:**  
+> “Treat \`BitzyLabs/design_guide\` as a **read-only upstream reference**. First confirm my writable project repository or fork. If I have not provided one, ask me to fork the guide or copy its Markdown files into my own repository. Apply changes **only to my repository**, never to \`BitzyLabs/design_guide\`. Do not push, create a PR against upstream, or alter any other account/project without my explicit approval.”
+
+**There are two different jobs:** *customising this guide* → work in your **fork**; *building your own product with the guide* → work in **your application repo** using a copied guide or an authorised read-only reference.
+
+---
+
 ## 🛣️ Two ways to use the development guide
 
 Not every founder uses AI in the same way. **Choose the workflow that matches how you build**—both use the same project-management principles.
 
 ### 💬 Track A — Chat-first builders
+
+**Fork or copy the template into a workspace you own; direct the chat to your own project records and give upstream only read access.**
 
 For people developing through ChatGPT or similar ongoing conversations. Keep your project state in GitHub/Notion (or a persistent Markdown checkpoint), break work into chunks, keep milestone updates and restart long chats with verified handovers instead of trying to remember everything.
 
@@ -29,6 +50,8 @@ For people developing through ChatGPT or similar ongoing conversations. Keep you
 - **[Copy the Chat Continuation .md template](templates/CHAT_CONTINUATION.md)** into your project or Notion workspace
 
 ### 🤖 Track B — Full coding agents (Codex / Claude Code)
+
+**Open your own application repo (with copied Markdown instructions), or your own fork if customising the guide. Set your agent's writable target explicitly; never run write-capable agents against upstream.**
 
 For people using agents that read/edit repositories, execute tests and connect to services. Keep concise repo-specific instructions, point agents to the detailed guide, enforce scope and permissions, check CI/provider budgets and seal each chunk with real evidence.
 
@@ -68,19 +91,21 @@ Both guides are **framework-agnostic** and require no special installation or pa
 
 ### 1. Give the guides to your AI coding agent
 
+**First: [fork or copy the guides into a repo you own](#-important-fork-or-copy-first--never-edit-the-bitzy-labs-source-repository), then explicitly name your writable repository. The upstream Bitzy Labs repo stays read-only.**
+
 For **UI/UX work**, send the agent this instruction:
 
-> Read https://github.com/BitzyLabs/design_guide/blob/main/human_friendly_design.md, inspect my existing design system and current UI, and apply the relevant human-friendly principles to **[screen or user journey]**. Preserve working behaviour and backend invariants. Test the rendered desktop and mobile journeys, keyboard accessibility, feedback, error states and recovery. Summarise what changed, what was verified and what remains untested.
+> Treat **BitzyLabs/design_guide as read-only**. Confirm that your writable target is **[MY_ACCOUNT/MY_APP_REPO]**, not the guide's original repository. Read my local/forked `human_friendly_design.md` (or the [upstream reference](https://github.com/BitzyLabs/design_guide/blob/main/human_friendly_design.md) read-only), inspect my app's design system and current UI, and apply the relevant principles to **[screen or user journey]**. Modify only my authorised app repo, preserve working behaviour and backend invariants, test desktop/mobile and accessibility, and report verified results. **No pushes or pull requests to Bitzy Labs upstream.**
 
 For **project/development work**, use this instruction:
 
-> Read https://github.com/BitzyLabs/design_guide/blob/main/project_mgmt.md, inspect the latest GitHub and Notion project-control records, and reconcile actual source/CI/provider state before making changes. Execute one bounded chunk, choose budget-conscious tests and tools, investigate unexplained failures without blind retries, and finish with evidence, durable checkpoint updates and one exact next action. Do not merge, spend money, change credentials or deploy to production without authorisation.
+> Treat **BitzyLabs/design_guide as read-only**. Work only in **[MY_ACCOUNT/MY_PROJECT_REPO]**, after confirming the repository/branch and permissions. Read my local/forked `project_mgmt.md` (or the [upstream reference](https://github.com/BitzyLabs/design_guide/blob/main/project_mgmt.md) read-only), inspect my project's current GitHub/Notion checkpoint and real CI/provider state, then execute one bounded chunk with budget-conscious tests. Verify results, update **my project** handoff and report the exact next action. Never edit the Bitzy Labs repo or create an upstream PR; do not merge, spend, change credentials or deploy without authorisation.
 
 The agent needs access to the URLs or a pasted/local copy. Sharing links does not automatically install any skill or grant connected-app permissions.
 
 ### 2. Add the Markdown file to your own project
 
-Copy [human_friendly_design.md](human_friendly_design.md), [project_mgmt.md](project_mgmt.md), or both into your repository and reference them from your project's own instructions (for example, AGENTS.md). Keep brand tokens, architecture and project-specific permissions authoritative.
+First [fork the guide into your own account](https://github.com/BitzyLabs/design_guide/fork) if you want to maintain a complete copy; alternatively copy [human_friendly_design.md](human_friendly_design.md), [project_mgmt.md](project_mgmt.md), or both **into a repository you own**. Reference your **local copies**, not an editable checkout of the Bitzy Labs upstream, from your project's own instructions (for example, AGENTS.md). Keep brand tokens, architecture and project-specific permissions authoritative.
 
 Example AGENTS.md snippet:
 
@@ -171,7 +196,7 @@ No private source code, staging hosts, credentials or proprietary business logic
 Suggestions, corrections and small improvements are welcome.
 
 - [Open an issue](https://github.com/BitzyLabs/design_guide/issues) with a concrete UX problem, evidence or a proposed improvement.
-- Submit a pull request that is concise, testable and useful beyond one framework or project.
+- If contributing to the upstream guide, submit an intentional pull request **from your own fork** that is concise, testable and useful beyond one framework or project. Do not direct an agent to push to the Bitzy Labs repository.
 - Clearly credit original creators and sources when adding new references.
 - **Don't copy third-party manuals, skills, artwork, private designs or proprietary source code into this repository.**
 - Avoid unsupported claims of accessibility compliance or guaranteed conversion improvement.
